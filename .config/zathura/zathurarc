@@ -1,0 +1,6 @@
+# man zathurarc
+
+map <C-j> zoom in
+map <C-k> zoom out
+map p feedkeys <F5>
+
