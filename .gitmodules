@@ -1,0 +1,18 @@
+[submodule ".vim/plugged/asyncrun.vim"]
+	path = .vim/plugged/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule ".vim/plugged/auto-pairs"]
+	path = .vim/plugged/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule ".vim/plugged/vim-commentary"]
+	path = .vim/plugged/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/plugged/vim-repeat"]
+	path = .vim/plugged/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule ".vim/plugged/vim-fugitive"]
+	path = .vim/plugged/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/plugged/vim-surround"]
+	path = .vim/plugged/vim-surround
+	url = https://github.com/tpope/vim-surround.git
