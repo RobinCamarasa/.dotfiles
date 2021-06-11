@@ -16,3 +16,6 @@
 [submodule ".vim/plugged/vim-surround"]
 	path = .vim/plugged/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule ".emacs.d/evil"]
+	path = .emacs.d/evil
+	url = https://github.com/emacs-evil/evil
