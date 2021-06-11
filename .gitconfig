@@ -1,0 +1,16 @@
+[core]
+	editor = /usr/bin/vim
+	excludesfile = "/home/tuchekaki/.gitignore_global"
+
+[user]
+	email = robin.camarasa@gmail.com
+	name = @RobinCamarasa
+
+[credential]
+	helper = cache --timeout 21600
+
+[init]
+	defaultBranch = master
+
+[alias]
+        lg = log --graph --all --oneline
