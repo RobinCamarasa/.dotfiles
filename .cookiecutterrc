@@ -1,0 +1,14 @@
+default_context:
+    author_name: "Robin Camarasa"
+    author_names: "Robin Camarasa\inst{1,2} \and Daniel Bos \inst{2,3} \and Marleen de Bruijne \inst{1,2,4}"
+    author_institutions: "$^1$Biomedical Imaging Group Rotterdam, Erasmus MC, Rotterdam, The Netherlands\\ $^2$Department of Radiology and Nuclear Medicine, Erasmus MC, Rotterdam, The Netherlands\\ $^3$Department of Epidemiology, Erasmus MC, Rotterdam, The Netherlands\\ $^4$Department of Computer Science, University of Copenhagen, Denmark "
+    python_version: "3.6"
+
+    author_institution: "Erasmus MC"
+    author_position: "PhD student"
+    author_github: "https://github.com/RobinCamarasa"
+    author_scholar: "https://scholar.google.com/citations?user=-73k3hcAAAAJ"
+    author_website: "http://bigr.nl/people/RobinCamarasa/"
+    author_mail: "r.camarasa@erasmusmc.nl"
+    author_email: "r.camarasa@erasmusmc.nl"
+cookiecutters_dir: "~/.cookiecutters/"
