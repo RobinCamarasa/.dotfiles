@@ -27,7 +27,7 @@ alias dotfiles='/usr/bin/git --git-dir="${HOME}/.dotfiles.git/" --work-tree="${H
 ```
 - Deploy
 ```bash
-dotfiles checkout && dotfiles submodule update && dotfiles config --local status.showUntrackedFiles no
+dotfiles checkout -f && dotfiles submodule update && dotfiles config --local status.showUntrackedFiles no
 ```
 
 - (Optional but recommended) Add your the dotfiles alias in `~/.bash_aliases`
