@@ -1,6 +1,6 @@
 [core]
 	editor = /usr/bin/vim
-	excludesfile = "/home/tuchekaki/.gitignore_global"
+	excludesfile = "~/.config/git/config"
 
 [user]
 	email = robin.camarasa@gmail.com
