@@ -19,7 +19,7 @@ This repository contains my .dotfiles for most of the application I am using. My
 
 - Clone as a repo
 ```bash
-$ git clone --bare --recurse-submodules "git@github.com:RobinCamarasa/.dotfiles.git" "${HOME}/.dotfiles.git"
+$ rm -rf ${HOME}/.vim/plugged; git clone --bare --recurse-submodules "git@github.com:RobinCamarasa/.dotfiles.git" "${HOME}/.dotfiles.git"
 ```
 - Create the dotfile alias
 ```bash
@@ -29,7 +29,11 @@ $ alias dotfiles='/usr/bin/git --git-dir="${HOME}/.dotfiles.git/" --work-tree="$
 ```bash
 $ dotfiles checkout && dotfiles submodule update && dotfiles config --local status.showUntrackedFiles no
 ```
+
 - (Optional but recommended) Add your the dotfiles alias in `~/.bash_aliases`
+```bash
+$ echo 'alias dotfiles=\'/usr/bin/git --git-dir="${HOME}/.dotfiles.git/" --work-tree="${HOME}"\'' >> ${HOME}/.bash_aliases
+```
 
 ## Contributor
 
