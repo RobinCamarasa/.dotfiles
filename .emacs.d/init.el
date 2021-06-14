@@ -35,8 +35,8 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    '(
-     "/home/tuchekaki/documents/gitlab/robin-camarasa-personal/todo-manager/personal.org" 
-     "/home/tuchekaki/documents/gitlab/robin-camarasa-personal/todo-manager/personal.org_archive" 
+     "/home/rcamarasa/documents/gitlab/robin-camarasa-phd/general/agenda/phd.org" 
+     "/home/rcamarasa/documents/gitlab/robin-camarasa-phd/general/agenda/phd.org_archive" 
      ))
  ;;'(package-selected-packages '(monokai-theme))
  )
