@@ -1,16 +1,27 @@
 [core]
 	editor = /usr/bin/vim
-	excludesfile = "~/.config/git/config"
+	excludesfile = /home/rcamarasa/.gitignore_global
 
 [user]
 	email = robin.camarasa@gmail.com
 	name = @RobinCamarasa
 
-[credential]
-	helper = cache --timeout 21600
+[credential "https://gitlab.com"]
+        helper = "!echo 'username=RobinCamarasa'; echo -n 'password='; pass git/gitlab"
+
+[credential "https://github.com"]
+        helper = "!echo 'username=RobinCamarasa'; echo -n 'password='; pass git/github"
+
+[credential "https://git.overleaf.com"]
+        helper = "!echo 'username=robin.camarasa@gmail.com'; echo -n 'password='; pass web/overleaf"
 
 [init]
 	defaultBranch = master
 
 [alias]
         lg = log --graph --all --oneline
+        rmt = remote -v
+
+[credential]
+	helper = cache --timeout 28800
+
