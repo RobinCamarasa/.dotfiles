@@ -21,7 +21,9 @@
 [alias]
         lg = log --graph --all --oneline
         rmt = remote -v
+        acp = "!f() { git add .; git commit -m \"${1}\"; git push; }; f"
+        cp = "!f() { git commit -m \"${1}\"; git push; }; f"
 
 [credential]
-	helper = cache --timeout 28800
+	helper = cache --timeout 1
 
