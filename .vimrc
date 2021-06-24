@@ -161,6 +161,7 @@ let g:latex_bib="bib"
 
 function! VisualizePdf()
     silent execute ':!zathura %:p:h/*.pdf &'
+    execute ':redraw!'
 endfunction
 
 function! CompileLatex()
@@ -219,8 +220,10 @@ endfunction
 function! VisualizeMarkdown()
     if filereadable('Makefile')
         silent execute '!zathura *.pdf &'
+        execute ':redraw!'
     else
         silent execute '!zathura ' . g:md_location . '.pdf &'
+        execute ':redraw!'
     end
 endfunction
 
