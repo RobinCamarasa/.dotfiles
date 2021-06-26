@@ -23,6 +23,7 @@
         rmt = remote -v
         acp = "!f() { git add .; git commit -m \"${1}\"; git push; }; f"
         cp = "!f() { git commit -m \"${1}\"; git push; }; f"
+        head = "!f() { git reset --hard; git clean -dfx; }; f"
 
 [credential]
 	helper = cache --timeout 1
