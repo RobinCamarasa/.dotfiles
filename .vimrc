@@ -230,7 +230,7 @@ endfunction
 autocmd Filetype markdown nnoremap <leader>c :call CompileMarkdown()<CR>
 autocmd Filetype markdown nnoremap <leader>p :call VisualizeMarkdown()<CR>
 autocmd Filetype markdown nnoremap <leader>p :call VisualizeMarkdown()<CR>
-autocmd Filetype markdown nnoremap <leader>r :!rcp<CR>?#<CR>jd/##<CR>k:r !xsel -ob<CR>
+autocmd Filetype markdown nnoremap <silent> <leader>r :!rcp<CR>?#<CR>jd/url<CR>2ddk:r !xsel -ob<CR>
 
 """"""""""
 " PYTHON "
