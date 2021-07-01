@@ -39,7 +39,6 @@ fi
 export GOPATH="${HOME}/gopath"
 export PATH="${GOPATH}:${GOPATH}/bin:${HOME}/.myscripts:/var/lib/snapd/snap/bin:${PATH}"
 export EDITOR='/usr/bin/vim'
-test -e .project && source .project
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -58,6 +57,9 @@ else
     fi
 fi
 unset __conda_setup
+
+# Load environment
+test -e .project && source .project
 
 # Get current git branch
 git_branch () {

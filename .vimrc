@@ -75,6 +75,7 @@ nnoremap gd <C-]>
 nnoremap <leader>y :call system('xsel --clipboard', @0)<CR>
 nnoremap S :%s//g<Left><Left>
 nnoremap s :s//g<Left><Left>
+nnoremap <leader>f :ls<CR>:b 
 
 " Visual mode
 vnoremap s :s//g<Left><Left>
