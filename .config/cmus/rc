@@ -1,0 +1,60 @@
+unbind common H
+unbind common L
+
+bind common H player-prev
+bind common L player-next
+
+# Colorscheme
+set color_cmdline_attr=default
+
+set color_cmdline_bg=234
+set color_cmdline_fg=white
+
+set color_cur_sel_attr=default
+set color_error=lightred
+set color_info=lightyellow
+set color_separator=37
+
+set color_statusline_attr=default
+
+set color_statusline_bg=234
+set color_statusline_fg=37
+
+set color_titleline_attr=default
+set color_titleline_bg=234
+set color_titleline_fg=37
+
+set color_trackwin_album_attr=bold
+set color_trackwin_album_bg=234
+set color_trackwin_album_fg=37
+
+set color_win_attr=default
+set color_win_bg=234
+
+set color_win_cur_attr=default
+set color_win_cur=202
+
+set color_win_cur_sel_attr=default
+set color_win_cur_sel_bg=37
+set color_win_cur_sel_fg=234
+
+set color_win_dir=lightblue
+set color_win_fg=255
+
+set color_win_inactive_cur_sel_attr=default
+set color_win_inactive_cur_sel_bg=37
+set color_win_inactive_cur_sel_fg=234
+set color_win_inactive_sel_attr=default
+
+set color_win_inactive_sel_bg=234
+set color_win_inactive_sel_fg=37
+
+set color_win_sel_attr=default
+set color_win_sel_bg=37
+set color_win_sel_fg=234
+
+set color_win_title_attr=default
+set color_win_title_bg=234
+set color_win_title_fg=37
+
+
