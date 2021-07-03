@@ -1,0 +1,9 @@
+#define color1 #1c1c1c
+#define color2 #088585
+
+*color1: color1
+*color2: color2
+
+Sxiv.background: color1
+Sxiv.foreground: color2
+

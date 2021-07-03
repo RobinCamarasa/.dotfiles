@@ -1,0 +1,36 @@
+# vim: filetype=neomuttrc
+# muttrc file for account robin.camarasa@gmail.com
+set realname = "robin.camarasa"
+set from = "robin.camarasa@gmail.com"
+set sendmail = "msmtp -a robin.camarasa@gmail.com"
+alias me robin.camarasa <robin.camarasa@gmail.com>
+set folder = "/home/tuchekaki/.local/share/mail/robin.camarasa@gmail.com"
+set header_cache = /home/tuchekaki/.cache/mutt-wizard/robin.camarasa@gmail.com/headers
+set message_cachedir = /home/tuchekaki/.cache/mutt-wizard/robin.camarasa@gmail.com/bodies
+set mbox_type = Maildir
+
+
+bind index,pager gg noop
+bind index,pager g noop
+bind index,pager M noop
+bind index,pager C noop
+bind index gg first-entry
+unmailboxes *
+unalternates *
+unset signature
+macro index o "<shell-escape>mbsync robin.camarasa@gmail.com<enter>" "run mbsync to sync robin.camarasa@gmail.com"
+
+mailboxes "=[Gmail]/Tous les messages" "=INBOX/Alumni" "=INBOX/thalys_tickets" "=[Gmail]/Brouillons" "=[Gmail]/Corbeille" "=[Gmail]/Important" "=[Gmail]/Messages envoy&AOk-s" "=[Gmail]/Spam" "=[Gmail]/Suivis" 
+macro index,pager gi "<change-folder>=INBOX/Alumni<enter>" "go to inbox"
+macro index,pager Mi ";<save-message>=INBOX/Alumni<enter>" "move mail to inbox"
+macro index,pager Ci ";<copy-message>=INBOX/Alumni<enter>" "copy mail to inbox"
+set spoolfile = "+INBOX/Alumni"
+macro index,pager gi "<change-folder>=INBOX/thalys_tickets<enter>" "go to inbox"
+macro index,pager Mi ";<save-message>=INBOX/thalys_tickets<enter>" "move mail to inbox"
+macro index,pager Ci ";<copy-message>=INBOX/thalys_tickets<enter>" "copy mail to inbox"
+set spoolfile = "+INBOX/thalys_tickets"
+macro index,pager gS "<change-folder>=[Gmail]/Spam<enter>" "go to spam"
+macro index,pager MS ";<save-message>=[Gmail]/Spam<enter>" "move mail to spam"
+macro index,pager CS ";<copy-message>=[Gmail]/Spam<enter>" "copy mail to spam"
+set spoolfile = "+[Gmail]/Tous les messages"
+startup-hook 'exec mbsync robin.camarasa@gmail.com'
