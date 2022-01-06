@@ -1,8 +1,13 @@
 unbind common H
 unbind common L
+unbind common >
+unbind common <
+
 
 bind common H player-prev
 bind common L player-next
+bind common > vol +5%
+bind common < vol -5%
 
 # Colorscheme
 set color_cmdline_attr=default
