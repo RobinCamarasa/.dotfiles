@@ -19,3 +19,6 @@
 [submodule ".emacs.d/evil"]
 	path = .emacs.d/evil
 	url = https://github.com/emacs-evil/evil
+[submodule ".vim/plugged/ultisnips"]
+	path = .vim/plugged/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
