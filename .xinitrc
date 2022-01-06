@@ -19,9 +19,11 @@ start_dwm (){
     done &
 
     nm-applet &
+    workrave &
     blueman-applet &
     dunst &
-    redshift &
+    redshift-gtk &
+    setxkbmap -layout us -variant intl
     exec dwm
 }
 
