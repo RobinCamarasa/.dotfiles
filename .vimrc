@@ -50,7 +50,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'honza/vim-snippets'
 
     " Personal plugin
-    Plug 'RobinCamarasa/vim-potion'
     Plug 'RobinCamarasa/vim-3d-openscad'
 
 call plug#end()

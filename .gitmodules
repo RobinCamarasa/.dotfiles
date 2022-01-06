@@ -22,3 +22,12 @@
 [submodule ".vim/plugged/ultisnips"]
 	path = .vim/plugged/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/plugged/ale"]
+	path = .vim/plugged/ale
+	url = https://github.com/dense-analysis/ale
+[submodule ".vim/plugged/vim-3d-openscad"]
+	path = .vim/plugged/vim-3d-openscad
+	url = git@github.com:RobinCamarasa/vim-3d-openscad.git
+[submodule ".vim/plugged/vim-snippets"]
+	path = .vim/plugged/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
