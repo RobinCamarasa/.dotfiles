@@ -1,7 +1,6 @@
 https://www.archlinux.org/feeds/news/ "english" "tech"
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCMFcMhePnH4onVHt2-ItPZw "youtube" "science" "french" 
-
 https://www.youtube.com/feeds/videos.xml?channel_id=UCWedHS9qKebauVIK2J7383g "youtube" "tech" "french"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA "youtube" "science" "english"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCaNlbnghtwlsGF-KzAFThqA "youtube" "science" "french"
@@ -14,9 +13,4 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCwbV8cTR4yBgFdfa_BXV2OA "yo
 https://www.youtube.com/feeds/videos.xml?channel_id=UCLXDNUOO3EQ80VmD9nQBHPg "youtube" "science" "french"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCwzxu1j19ICnfW5zrBvUw-w "youtube" "fun" "french"
 
-https://www.reddit.com/r/vim.rss "reddit" "tech"
-
 https://lukesmith.xyz/rss.xml "tech" "english"
-https://lukesmith.xyz/videos "tech" "english"
-
-http://feeds.bbci.co.uk/news/world/rss.xml "news" "english"
