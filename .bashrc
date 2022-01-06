@@ -40,6 +40,8 @@ export GOPATH="${HOME}/gopath"
 export PATH="${GOPATH}:${GOPATH}/bin:${HOME}/.myscripts:/var/lib/snapd/snap/bin:${PATH}"
 export EDITOR='/usr/bin/vim'
 test -e .project && source .project
+set COLORFGBG="green;color234"
+export COLORFGBG
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
