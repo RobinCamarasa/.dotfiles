@@ -23,6 +23,9 @@ let g:netrw_browsex_viewer="xdg-open"
 
 " Vim plugins {{{
 call plug#begin('~/.vim/plugged')
+    " Undo tree
+    Plug 'mbbill/undotree'
+
     " Auto completion
     Plug 'dense-analysis/ale'
 
@@ -82,23 +85,7 @@ nnoremap gd <C-]>
 nnoremap <leader>y :let @+=@0<CR>:let @*=@0<CR>
 nnoremap S :%s//g<Left><Left>
 nnoremap s :s//g<Left><Left>
-
-function! GetBufferInfos(val)
-    if getchangelist(a:val)[1] == 0
-        return {"bufnr": a:val}
-    else
-        return {"lnum": getchangelist(a:val)[0][-1]["lnum"], "col": getchangelist(a:val)[0][-1]["col"], "bufnr": a:val}
-    endif
-endfunction
-
-nnoremap <leader>f :call setloclist(
-            \winnr(), 
-            \map(
-                \filter(range(1, bufnr('$')), 'buflisted(v:val)'),
-                \'GetBufferInfos(v:val)'
-            \)
-        \)<cr>:lopen<cr>
-nnoremap <leader>F :E<cr>
+nnoremap <leader>u :UndotreeToggle<cr>
 nnoremap <leader><cr> <cr><c-w>wZZ
 " }}}
 
@@ -250,11 +237,13 @@ nnoremap <leader>p :execute("Xprg " . b:xrecipe)<CR>:redraw!<CR>
 
 " FILETYPE Markdown {{{
 augroup markdown_group
+    autocmd!
     autocmd Filetype markdown set dictionary+=~/.vim/dictionnary/ref
     autocmd BufNewFile,BufRead markdown setlocal makeprg=pandoc 
     autocmd Filetype markdown let b:recipe='-s ' . expand('%') . ' -o ' . expand('%:p:r') . '.pdf' 
     autocmd Filetype markdown let b:xprg="zathura" 
-    autocmd Filetype markdown  let b:xrecipe=expand('%:p:r') . '.pdf'" "
+    autocmd Filetype markdown let b:xrecipe=expand('%:p:r') . '.pdf'" "
+    autocmd Filetype markdown setlocal keywordprg=clear\ \&\ trans\ :fr
 augroup END
 " }}}
 
