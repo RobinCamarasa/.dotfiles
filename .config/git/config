@@ -13,4 +13,7 @@
 	defaultBranch = master
 
 [alias]
+        rmt = remote get-url origin
         lg = log --graph --all --oneline
+        acp = "!f() { git add .; git commit -m \"${1}\"; git push; }; f"
+        cp = "!f() { git commit -m \"${1}\"; git push; }; f"

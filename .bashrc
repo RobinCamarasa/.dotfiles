@@ -39,22 +39,21 @@ fi
 export GOPATH="${HOME}/gopath"
 export PATH="${GOPATH}:${GOPATH}/bin:${HOME}/.myscripts:/var/lib/snapd/snap/bin:${PATH}"
 export EDITOR='/usr/bin/vim'
-test -e .project && source .project
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if [ ! -z "$VIRTUAL_ENV" ]; then
- source $VIRTUAL_ENV/bin/activate  # commented out by conda initialize  # commented out by conda initialize
+    source $VIRTUAL_ENV/bin/activate  # commented out by conda initialize  # commented out by conda initialize  # commented out by conda initialize
 fi
 
-__conda_setup="$('/home/tuchekaki/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/rcamarasa/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/tuchekaki/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tuchekaki/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/rcamarasa/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rcamarasa/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
-        export PATH="/home/tuchekaki/miniconda3/bin:$PATH"
+        export PATH="/home/rcamarasa/miniconda3/bin:$PATH"  # commented out by conda initialize
     fi
 fi
 unset __conda_setup
@@ -134,3 +133,4 @@ PS2="$(get_ps2)"
 PS3="$(get_ps3)"
 PS4="$(get_ps4)"
 
+test -e .project && source .project
