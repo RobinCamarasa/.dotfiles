@@ -1,71 +1,51 @@
 " Vim Options {{{
 let mapleader=" "
 let g:netrw_banner=0
-filetype indent plugin on
-syntax on
 set clipboard=unnamed
 set belloff=all
 set number relativenumber
 set autoindent
 set expandtab
 set shiftwidth=4
-set omnifunc=ale#completion#OmniFunc
 set shortmess+=c
 set exrc
 set incsearch
-set ruler
-set path+=**
-set display+=lastline
-set autoread
 set foldmethod=manual
+
+" TODO
 let g:netrw_browsex_viewer="xdg-open"
+let b:recipe=" "
+let b:makeprg="/usr/bin/make"
+let b:xprg="/usr/bin/zathura"
+let b:xrecipe=" "
+
+let $BASH_ENV = "~/.bash_aliases"
+set grepprg=grep\ --color=never\ -n\ $*\ /dev/null
 " }}}
 
 " Vim plugins {{{
-call plug#begin('~/.vim/plugged')
-    " Undo tree
-    Plug 'mbbill/undotree'
 
-    " Auto completion
-    Plug 'dense-analysis/ale'
+" Personal plugins
+packadd! cto.vim " My Custom Text Objects (cto) (depends on matchit) (path ~/.vim/pack/personal/opt/cto.vim/)
+packadd! openscad.vim " Add support for openscad (path ~/.vim/pack/personal/opt/openscad.vim/)
 
-    " Auto pairing
-    Plug 'jiangmiao/auto-pairs'
+" Tpope plugins
+packadd! vim-sensible " Add sensible default to vim (path ~/.vim/pack/tpope/opt/vim-sensible/)
+packadd! vim-commentary " Deal with comments with the operator gc (path ~/.vim/pack/tpope/opt/vim-commentary/)
+packadd! vim-fugitive " Deal with git (path ~/.vim/pack/tpope/opt/vim-fugitive/)
+packadd! vim-repeat " Deal with repetition (path ~/.vim/pack/tpope/opt/vim-repeat/)
+packadd! vim-surround " Add surrounding options with the operator cs (path ~/.vim/pack/tpope/opt/vim-surround/)
 
-    " Change surrounding
-    Plug 'tpope/vim-surround'
+" Utils plugins
+packadd! auto-pairs " Add automatically the closing parenthesis (path ~/.vim/pack/utils/opt/auto-pairs/)
+packadd! asyncrun.vim " TODO: remove -- Add latex matching of operations (path ~/.vim/pack/utils/opt/asyncrun.vim/)
 
-    " Change commentary
-    Plug 'tpope/vim-commentary'
+" Colorscheme plugins
+packadd! molokai
 
-    " Handle repition with plugins
-    Plug 'tpope/vim-repeat'
-
-    " Handle Git
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-scriptease'
-
-    " Asynchronous jobs
-    Plug 'skywind3000/asyncrun.vim'
-
-    " Snippets
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-
-    " Personal plugin
-    Plug 'RobinCamarasa/vim-3d-openscad'
-
-call plug#end()
 " }}}
 
-" Plugin Fugitive {{{
-nnoremap <leader>h :Git blame<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gm :Git mergetool<CR>
-"}}}
-
 " Colorscheme {{{
-" See github https://github.com/tomasr/molokai
 let g:molokai_original = 1
 colorscheme molokai
 " }}}
@@ -80,17 +60,28 @@ inoremap <C-e> <C-]>
 " }}}
 
 " Normal mode {{{
-nnoremap Y y$
 nnoremap gd <C-]>
 nnoremap <leader>y :let @+=@0<CR>:let @*=@0<CR>
 nnoremap S :%s//g<Left><Left>
 nnoremap s :s//g<Left><Left>
 nnoremap <leader>u :UndotreeToggle<cr>
-nnoremap <leader><cr> <cr><c-w>wZZ
+nnoremap <leader>y :set operatorfunc=CopyOperator<cr>g@
+
+function! CopyOperator(type)
+    if a:type ==# 'v'
+        normal! `<v`>y
+    elseif a:type ==# 'char'
+        normal! `[v`]y
+    else
+        return
+    endif
+    let @+=@@
+endfunction
 " }}}
 
 " Visual mode {{{
 vnoremap s :s//g<Left><Left>
+vnoremap <leader>y :<c-u>call CopyOperator(visualmode())<cr>
 " }}}
 
 " GRAMMAR Auto-correction {{{
@@ -144,44 +135,8 @@ augroup general_mappings
 augroup END
 " }}}
 
-" PLUGIN ALE {{{
-let g:ale_linters = {
-      \   'python': ['flake8', 'pylint'],
-      \   'ruby': ['standardrb', 'rubocop'],
-      \   'javascript': ['eslint'],
-      \}
-let g:ale_fixers = {
-      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \   'python': [
-          \ 'black', 'isort',
-          \ 'add_blank_lines_for_python_control_statements', 'autoflake',
-          \ 'autoimport', 'autopep8',
-          \ 'black', 'isort',
-          \ 'reorder-python-imports', 'yapf',
-          \ 'remove_trailing_lines', 'trim_whitespace',
-          \ ]
-      \}
-
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
-let g:ale_fix_on_save = 0
-" }}}
-
-" Ctags {{{
-function! RunCtags()
-    if version >= 800
-        execute 'AsyncRun -post=call\ EnableQuickfixOnError() ctags -R . ${CONDA_PREFIX}/lib/*/site-packages/'
-    else
-        silent execute ':!ctags -R . ${CONDA_PREFIX}/lib/*/site-packages/'
-        silent execute ':redraw!'
-    end
-endfunction
-nnoremap <leader>t :call RunCtags()<CR>
+" rk {{{
+    command -nargs=* -complete=file -bar RK :call system('rk ' . '<args> &')
 " }}}
 
 " Compiler {{{
@@ -213,6 +168,10 @@ function! SetXprg()
     let b:xrecipe=input("Xrecipe: ", b:xrecipe)
 endfunction
 
+let xprg="/usr/bin/zathura"
+let xrecipe=" "
+let makeprg="/usr/bin/make"
+let recipe=" "
 
 command -nargs=* -complete=file -bar LMake :execute('AsyncRun -silent -save=2 -mode=async -post=call\ EnableQuickfixOnError() ' . expand(&l:makeprg) . ' <args>')
 command -nargs=* -complete=file -bar Make :execute('AsyncRun -silent -save=2 -mode=async -post=call\ EnableQuickfixOnError() ' . expand(&g:makeprg) . ' <args>')
@@ -323,18 +282,6 @@ augroup latex
     " Set dictionnary
     autocmd Filetype tex set dictionary+=~/.vim/dictionnary/ref
     " Define snippets
-    autocmd Filetype tex iabbrev <buffer> xse \section{}<Esc>i
-    autocmd Filetype tex iabbrev <buffer> xsu \subsection{}<Esc>i
-    autocmd Filetype tex iabbrev <buffer> xsb \subsubsection{}<Esc>i
-    autocmd Filetype tex iabbrev <buffer> xfi \begin{figure}[ht]<CR>    \includegraphics[width=\textwidth]{}<CR>\end{figure}<Esc>$kT=i
-    autocmd Filetype tex iabbrev <buffer> xff \begin{frame}{}<CR>\end{frame}<ESC>k$i
-    autocmd Filetype tex iabbrev <buffer> xfe \begin{frame}{\insertsection}<CR>\end{frame}<ESC>O
-    autocmd Filetype tex iabbrev <buffer> xfu \begin{frame}{\insertsubsection}<CR>\end{frame}<ESC>O
-    autocmd Filetype tex iabbrev <buffer> xcs \begin{columns}<CR>\end{columns}<ESC>O
-    autocmd Filetype tex iabbrev <buffer> xcc \begin{column}{\textwidth}<CR>\end{column}<ESC>k$F\i
-    autocmd Filetype tex iabbrev <buffer> xit \item
-    autocmd Filetype tex iabbrev <buffer> xbe \begin{##}<cr>\end{##}<esc>kvj:s/##/
-    autocmd Filetype tex iabbrev <buffer> xbp \begin{itemize}<esc>yyplciwend<esc>O\item
     autocmd Filetype tex setlocal efm+=
             \%E!\ LaTeX\ %trror:\ %m,
             \%E!\ %m,

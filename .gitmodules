@@ -1,33 +1,33 @@
-[submodule ".vim/plugged/asyncrun.vim"]
-	path = .vim/plugged/asyncrun.vim
-	url = https://github.com/skywind3000/asyncrun.vim.git
-[submodule ".vim/plugged/auto-pairs"]
-	path = .vim/plugged/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule ".vim/plugged/vim-commentary"]
-	path = .vim/plugged/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/plugged/vim-repeat"]
-	path = .vim/plugged/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule ".vim/plugged/vim-fugitive"]
-	path = .vim/plugged/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/plugged/vim-surround"]
-	path = .vim/plugged/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule ".emacs.d/evil"]
-	path = .emacs.d/evil
-	url = https://github.com/emacs-evil/evil
-[submodule ".vim/plugged/ultisnips"]
-	path = .vim/plugged/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule ".vim/plugged/ale"]
-	path = .vim/plugged/ale
-	url = https://github.com/dense-analysis/ale
-[submodule ".vim/plugged/vim-3d-openscad"]
-	path = .vim/plugged/vim-3d-openscad
-	url = git@github.com:RobinCamarasa/vim-3d-openscad.git
-[submodule ".vim/plugged/vim-snippets"]
-	path = .vim/plugged/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
+[submodule ".vim/pack/tpope/opt/vim-surround"]
+	path = .vim/pack/tpope/opt/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule ".vim/pack/tpope/opt/vim-commentary"]
+	path = .vim/pack/tpope/opt/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule ".vim/pack/tpope/opt/vim-repeat"]
+	path = .vim/pack/tpope/opt/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule ".vim/pack/tpope/opt/vim-fugitive"]
+	path = .vim/pack/tpope/opt/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule ".vim/pack/personal/opt/openscad.vim"]
+	path = .vim/pack/personal/opt/openscad.vim
+	url = git@github.com:RobinCamarasa/openscad.vim.git
+[submodule ".vim/pack/personal/opt/openscad.vim"]
+	path = .vim/pack/personal/opt/openscad.vim
+	url = git@github.com:RobinCamarasa/openscad.vim.git
+[submodule ".vim/pack/utils/opt/auto-pairs"]
+	path = .vim/pack/utils/opt/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule ".vim/pack/utils/opt/asyncrun.vim"]
+	path = .vim/pack/utils/opt/asyncrun.vim
+	url = git@github.com:skywind3000/asyncrun.vim.git
+[submodule ".vim/pack/colorscheme/opt/molokai"]
+	path = .vim/pack/colorscheme/opt/molokai
+	url = git@github.com:tomasr/molokai.git
+[submodule ".vim/pack/tpope/opt/vim-sensible"]
+	path = .vim/pack/tpope/opt/vim-sensible
+	url = git@github.com:tpope/vim-sensible.git
+[submodule ".vim/pack/personal/opt/cto.vim"]
+	path = .vim/pack/personal/opt/cto.vim
+	url = git@github.com:RobinCamarasa/cto.vim.git
