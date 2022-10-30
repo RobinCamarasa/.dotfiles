@@ -25,23 +25,27 @@ set grepprg=grep\ --color=never\ -n\ $*\ /dev/null
 
 " Vim plugins {{{
 
-" Personal plugins
+" Personal plugin {{{
 packadd! cto.vim " My Custom Text Objects (cto) (depends on matchit) (path ~/.vim/pack/personal/opt/cto.vim/)
 packadd! openscad.vim " Add support for openscad (path ~/.vim/pack/personal/opt/openscad.vim/)
+"}}}
 
-" Tpope plugins
+" Tpope plugin {{{
 packadd! vim-sensible " Add sensible default to vim (path ~/.vim/pack/tpope/opt/vim-sensible/)
 packadd! vim-commentary " Deal with comments with the operator gc (path ~/.vim/pack/tpope/opt/vim-commentary/)
 packadd! vim-fugitive " Deal with git (path ~/.vim/pack/tpope/opt/vim-fugitive/)
 packadd! vim-repeat " Deal with repetition (path ~/.vim/pack/tpope/opt/vim-repeat/)
 packadd! vim-surround " Add surrounding options with the operator cs (path ~/.vim/pack/tpope/opt/vim-surround/)
+"}}}
 
-" Utils plugins
+" Utils plugins {{{
 packadd! auto-pairs " Add automatically the closing parenthesis (path ~/.vim/pack/utils/opt/auto-pairs/)
 packadd! asyncrun.vim " TODO: remove -- Add latex matching of operations (path ~/.vim/pack/utils/opt/asyncrun.vim/)
+"}}}
 
-" Colorscheme plugins
+" Colorscheme plugins {{{
 packadd! molokai
+"}}}
 
 " }}}
 
@@ -197,8 +201,7 @@ nnoremap <leader>p :execute("Xprg " . b:xrecipe)<CR>:redraw!<CR>
 " FILETYPE Markdown {{{
 augroup markdown_group
     autocmd!
-    autocmd Filetype markdown set dictionary+=~/.vim/dictionnary/ref
-    autocmd BufNewFile,BufRead markdown setlocal makeprg=pandoc 
+    autocmd Filetype markdown setlocal makeprg=pandoc 
     autocmd Filetype markdown let b:recipe='-s ' . expand('%') . ' -o ' . expand('%:p:r') . '.pdf' 
     autocmd Filetype markdown let b:xprg="zathura" 
     autocmd Filetype markdown let b:xrecipe=expand('%:p:r') . '.pdf'" "
@@ -271,7 +274,7 @@ augroup END
 " FILETYPE latex {{{
 augroup latex
     autocmd!
-    autocmd BufNewFile,BufRead tex setlocal makeprg=pdflatex\ -interaction\=nonstopmode 
+    autocmd Filetype tex setlocal makeprg=pdflatex\ -interaction\=nonstopmode 
     autocmd Filetype tex let b:recipe=expand('%') 
     autocmd Filetype tex let b:xprg='zathura'
     autocmd Filetype tex let b:xrecipe=expand('%:r') . '.pdf' 
