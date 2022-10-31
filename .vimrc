@@ -50,8 +50,9 @@ packadd! molokai
 " }}}
 
 " Colorscheme {{{
-let g:molokai_original = 1
-colorscheme molokai
+" let g:molokai_original = 1
+" colorscheme molokai
+colorscheme evening
 " }}}
 
 " Terminal mode {{{
