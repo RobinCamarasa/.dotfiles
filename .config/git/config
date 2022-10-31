@@ -21,9 +21,15 @@
 [alias]
         lg = log --graph --all --oneline
         rmt = remote -v
+        sync = "!f() { git add .; git commit -m \"${1}\"; git push; }; f"
         acp = "!f() { git add .; git commit -m \"${1}\"; git push; }; f"
         cp = "!f() { git commit -m \"${1}\"; git push; }; f"
+	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
 
 [credential]
 	helper = cache --timeout 1
 
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[merge]
+	tool = fugitive

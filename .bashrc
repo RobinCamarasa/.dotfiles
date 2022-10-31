@@ -8,7 +8,7 @@ esac
 HISTCONTROL=ignoreboth # Remove duplicate
 shopt -s histappend # Append history
 HISTSIZE=1000
-HISTFILESIZE=2000 
+HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -136,3 +136,6 @@ PS2="$(get_ps2)"
 PS3="$(get_ps3)"
 PS4="$(get_ps4)"
 
+
+export PATH=$PATH:/home/rcamarasa/bin
+export PATH=$PATH:/usr/local/go/bin

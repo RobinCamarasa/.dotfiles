@@ -57,15 +57,14 @@
 (add-hook 'org-agenda-mode-hook (lambda () (define-key org-agenda-mode-map "k" 'org-agenda-previous-item)))
 
 (setq org-todo-keywords '(
-      (sequence "TODO" "PLANNED" "ONHOLD" "|" "DONE")
+      (sequence "TODO" "|" "DOING" "|" "DONE")
       (sequence "RECURRENT" "|" "ACHIEVED")
     )
 )
 
 (setq org-todo-keyword-faces
       '(
-        ("TODO" . org-warning) ("PLANNED" . "blue")
-        ("ONHOLD" . "yellow")
+        ("TODO" . org-warning) ("DOING" . "yellow")
         ("DONE" . (:foreground "green" :weight bold))
         ("RECURRENT" . "blue")
         ("ACHIEVED" . (:foreground "green" :weight bold)))
@@ -87,7 +86,9 @@
 
 
 (setq org-tag-alist '(("important" . ?i)
-                    ("urgent"    . ?u)))
+                    ("urgent"    . ?u)
+                    ("daniel"    . ?d)
+                    ("marleen"    . ?m)))
 
 
 
@@ -95,5 +96,7 @@
    '(("1" "Q1" tags-todo "+important+urgent")
      ("2" "Q2" tags-todo "+important-urgent")
      ("3" "Q3" tags-todo "-important+urgent")
-     ("4" "Q4" tags-todo "-important-urgent")))
+     ("4" "Q4" tags-todo "-important-urgent")
+     ("5" "daniel" tags-todo "+daniel")
+     ("6" "marleen" tags-todo "+marleen")))
 
