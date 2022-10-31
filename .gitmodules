@@ -31,3 +31,6 @@
 [submodule ".vim/pack/personal/opt/cto.vim"]
 	path = .vim/pack/personal/opt/cto.vim
 	url = git@github.com:RobinCamarasa/cto.vim.git
+[submodule ".vim/pack/tpope/opt/vim-vinegar"]
+	path = .vim/pack/tpope/opt/vim-vinegar
+	url = git@github.com:tpope/vim-vinegar.git
