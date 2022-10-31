@@ -22,9 +22,6 @@
 [submodule ".vim/pack/utils/opt/asyncrun.vim"]
 	path = .vim/pack/utils/opt/asyncrun.vim
 	url = git@github.com:skywind3000/asyncrun.vim.git
-[submodule ".vim/pack/colorscheme/opt/molokai"]
-	path = .vim/pack/colorscheme/opt/molokai
-	url = git@github.com:tomasr/molokai.git
 [submodule ".vim/pack/tpope/opt/vim-sensible"]
 	path = .vim/pack/tpope/opt/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git

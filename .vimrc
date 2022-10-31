@@ -43,20 +43,14 @@ packadd! auto-pairs " Add automatically the closing parenthesis (path ~/.vim/pac
 packadd! asyncrun.vim " TODO: remove -- Add latex matching of operations (path ~/.vim/pack/utils/opt/asyncrun.vim/)
 "}}}
 
-" Colorscheme plugins {{{
-packadd! molokai
-"}}}
-
 " }}}
 
 " Colorscheme {{{
-" let g:molokai_original = 1
-" colorscheme molokai
-colorscheme evening
+colorscheme slate
 " }}}
 
 " Terminal mode {{{
-tnoremap <Esc> <C-w>N
+" tnoremap <Esc> <C-w>N
 tnoremap <C-w>p <C-w>"0
 "}}}
 
