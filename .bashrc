@@ -36,30 +36,17 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# local definitions.
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
+
 export GOPATH="${HOME}/gopath"
 export PATH="${GOPATH}:${GOPATH}/bin:${HOME}/.myscripts:/var/lib/snapd/snap/bin:${PATH}"
 export EDITOR='/usr/bin/vim'
-test -e .project && source .project
 set COLORFGBG="green;color234"
 export COLORFGBG
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if [ ! -z "$VIRTUAL_ENV" ]; then
-    source $VIRTUAL_ENV/bin/activate  # commented out by conda initialize  # commented out by conda initialize  # commented out by conda initialize  # commented out by conda initialize
-fi
-
-__conda_setup="$('/home/tuchekaki/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tuchekaki/miniconda3/etc/profile.d/conda.sh" ]; then
-         . "/home/tuchekaki/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize  # commented out by conda initialize
-    else
-        export PATH="/home/tuchekaki/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
-    fi
-fi
-unset __conda_setup
 
 # Get current git branch
 git_branch () {
