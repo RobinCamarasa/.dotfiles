@@ -7,7 +7,6 @@ This repository contains my .dotfiles for most of the application I am using. My
 - [bash](https://www.gnu.org/software/bash/)
 - [cookiecutter](https://github.com/cookiecutter/cookiecutter)
 - [ctags](https://github.com/universal-ctags/ctags)
-- [emacs](https://www.gnu.org/software/emacs/)
 - [dunst](https://dunst-project.org/)
 - [git](https://git-scm.com)
 - [ranger](https://github.com/ranger/ranger)
