@@ -1,3 +1,24 @@
+;;;;;;;
+; VIM ;
+;;;;;;;
+
+; board of directors (personal)
+[submodule ".vim/pack/board_of_directors/opt/cto.vim"]
+	path = .vim/pack/board_of_directors/opt/cto.vim
+	url = git@github.com:RobinCamarasa/cto.vim.git
+[submodule ".vim/pack/board_of_directors/opt/cco.vim"]
+	path = .vim/pack/board_of_directors/opt/cco.vim
+	url = git@github.com:RobinCamarasa/cco.vim.git
+[submodule ".vim/pack/board_of_directors/opt/coo.vim"]
+	path = .vim/pack/board_of_directors/opt/coo.vim
+	url = git@github.com:RobinCamarasa/coo.vim.git
+
+; personal plugins
+[submodule ".vim/pack/personal/opt/openscad.vim"]
+	path = .vim/pack/personal/opt/openscad.vim
+	url = git@github.com:RobinCamarasa/openscad.vim.git
+
+; tpope plugins
 [submodule ".vim/pack/tpope/opt/vim-surround"]
 	path = .vim/pack/tpope/opt/vim-surround
 	url = git@github.com:tpope/vim-surround.git
@@ -10,24 +31,14 @@
 [submodule ".vim/pack/tpope/opt/vim-fugitive"]
 	path = .vim/pack/tpope/opt/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule ".vim/pack/personal/opt/openscad.vim"]
-	path = .vim/pack/personal/opt/openscad.vim
-	url = git@github.com:RobinCamarasa/openscad.vim.git
-[submodule ".vim/pack/personal/opt/openscad.vim"]
-	path = .vim/pack/personal/opt/openscad.vim
-	url = git@github.com:RobinCamarasa/openscad.vim.git
-[submodule ".vim/pack/utils/opt/auto-pairs"]
-	path = .vim/pack/utils/opt/auto-pairs
-	url = git@github.com:jiangmiao/auto-pairs.git
-[submodule ".vim/pack/utils/opt/asyncrun.vim"]
-	path = .vim/pack/utils/opt/asyncrun.vim
-	url = git@github.com:skywind3000/asyncrun.vim.git
 [submodule ".vim/pack/tpope/opt/vim-sensible"]
 	path = .vim/pack/tpope/opt/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
-[submodule ".vim/pack/personal/opt/cto.vim"]
-	path = .vim/pack/personal/opt/cto.vim
-	url = git@github.com:RobinCamarasa/cto.vim.git
 [submodule ".vim/pack/tpope/opt/vim-vinegar"]
 	path = .vim/pack/tpope/opt/vim-vinegar
 	url = git@github.com:tpope/vim-vinegar.git
+
+; util plugins
+[submodule ".vim/pack/utils/opt/auto-pairs"]
+	path = .vim/pack/utils/opt/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
