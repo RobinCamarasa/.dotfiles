@@ -68,7 +68,7 @@ inoremap <C-e> <C-]>
 
 " Normal mode {{{
 nnoremap Q <nop> 
-" Who need Execution mode?
+" Who needs Execution mode?
 nnoremap gd <C-]>
 nnoremap S :%s//g<Left><Left>
 nnoremap s :s//g<Left><Left>

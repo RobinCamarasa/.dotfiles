@@ -15,6 +15,9 @@
 [submodule ".vim/pack/board_of_directors/opt/cxo.vim"]
 	path = .vim/pack/board_of_directors/opt/cxo.vim
 	url = git@github.com:RobinCamarasa/cxo.vim.git
+[submodule ".vim/pack/board_of_directors/opt/cfo.vim"]
+	path = .vim/pack/board_of_directors/opt/cfo.vim
+	url = git@github.com:RobinCamarasa/cfo.vim.git
 
 ; personal plugins
 [submodule ".vim/pack/personal/opt/openscad.vim"]
