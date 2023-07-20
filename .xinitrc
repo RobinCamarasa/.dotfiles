@@ -19,7 +19,6 @@ start_dwm (){
     done &
 
     nm-applet &
-    workrave &
     blueman-applet &
     dunst &
     redshift-gtk &
