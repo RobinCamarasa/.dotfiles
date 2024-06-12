@@ -122,9 +122,3 @@ PS1="$(get_ps1)"
 PS2="$(get_ps2)"
 PS3="$(get_ps3)"
 PS4="$(get_ps4)"
-
-
-export TSPATH="~/.myscripts/:~/.config/:~/documents"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
