@@ -43,7 +43,6 @@ fi
 
 export GOPATH="${HOME}/gopath"
 export PATH="${GOPATH}:${GOPATH}/bin:${HOME}/.myscripts:/var/lib/snapd/snap/bin:${HOME}/bin:${PATH}"
-export EDITOR='/usr/bin/vim'
 set COLORFGBG="green;color234"
 export COLORFGBG
 
