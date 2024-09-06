@@ -41,83 +41,33 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
-export GOPATH="${HOME}/gopath"
-export PATH="${GOPATH}:${GOPATH}/bin:${HOME}/.myscripts:/var/lib/snapd/snap/bin:${HOME}/bin:${PATH}"
 set COLORFGBG="green;color234"
 export COLORFGBG
 
 
-# Get current git branch
-git_branch () {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/g'
-}
+. "$HOME/.cargo/env"
 
-git_branch_space () {
-    test -z "$(git branch 1> /dev/null 2> /dev/null)" && test ! "$(git branch 2> /dev/null | wc -l )" == "0" && echo " "
-}
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ~/.bashrc
 
-git_status () {
-    test -z "$(git status --porcelain 2> /dev/null)" && echo "37" || echo "202"
-}
+clear
+neofetch
+eval "$(direnv hook bash)"
+eval "$(starship init bash)"
 
-get_ps1 () {
-    # Print branch
-    echo -n '\[\033[38;5;'
-    echo -n "\$(git_status)"
-    echo -n 'm\]'
-    echo -n "\$(git_branch)"
-    echo -n '\[\033[00m\]'
-    echo -n "\$(git_branch_space)"
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+# source ~/.local/share/blesh/ble.sh
 
-    # Print user
-    echo -n '\[\033[38;5;37m\]\u\[\033[00m\]'
-    # Print @
-    echo -n '\[\033[38;5;37m\]@\[\033[00m\]'
-    # Print host
-    echo -n '\[\033[38;5;37m\]\h\[\033[00m\]'
-    # Print :
-    echo -n '\[\033[38;5;248m\]:\[\033[00m\]'
-    # Print short working directory
-    echo -n '\[\033[38;5;248m\]\W\[\033[00m\]'
-    # Print >
-    echo -n '\[\033[38;5;37m\] > \[\033[00m\]'
-}
-get_ps2 () {
-    echo -n '\[\033[1m\]\[\033[38;5;37m\]-\[\033[00m\]'
-    echo -n '\[\033[1m\]\[\033[38;5;37m\]-\[\033[00m\]'
-    # Print >
-    echo -n '\[\033[1m\]\[\033[38;5;37m\]> \[\033[00m\]'
-}
-get_ps3 () {
-    # Print user
-    echo -n '\[\033[1m\]\[\033[38;5;160m\]-\[\033[00m\]'
-    # Print @
-    echo -n '\[\033[1m\]\[\033[38;5;202m\]-\[\033[00m\]'
-    # Print host
-    echo -n '\[\033[1m\]\[\033[38;5;190m\]-\[\033[00m\]'
-    # Print :
-    echo -n '\[\033[1m\]\[\033[38;5;46m\]-\[\033[00m\]'
-    # Print short working directory
-    echo -n '\[\033[1m\]\[\033[38;5;48m\]-\[\033[00m\]'
-    # Print >
-    echo -n '\[\033[1m\]\[\033[38;5;39m\]? \[\033[00m\]'
-}
-get_ps4 () {
-    # Print user
-    echo -n '\[\033[1m\]\[\033[38;5;160m\]-\[\033[00m\]'
-    # Print @
-    echo -n '\[\033[1m\]\[\033[38;5;202m\]-\[\033[00m\]'
-    # Print host
-    echo -n '\[\033[1m\]\[\033[38;5;190m\]-\[\033[00m\]'
-    # Print :
-    echo -n '\[\033[1m\]\[\033[38;5;46m\]-\[\033[00m\]'
-    # Print short working directory
-    echo -n '\[\033[1m\]\[\033[38;5;48m\]-\[\033[00m\]'
-    # Print >
-    echo -n '\[\033[1m\]\[\033[38;5;39m\]# \[\033[00m\]'
-}
+. "$HOME/.atuin/bin/env"
 
-PS1="$(get_ps1)"
-PS2="$(get_ps2)"
-PS3="$(get_ps3)"
-PS4="$(get_ps4)"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"

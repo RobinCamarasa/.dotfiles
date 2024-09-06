@@ -24,8 +24,10 @@
         acp = "!f() { git add .; git commit -m \"${1}\"; git push; }; f"
         cp = "!f() { git commit -m \"${1}\"; git push; }; f"
         head = "!f() { git reset --hard; git clean -dfx; }; f"
-        url = "!f() { git remote -v | grep 'push' | awk '{print $2}' |  sed -e 's#:#/#' -e 's#^git@#https://#' -e 's#.git$##' -e 's#ci.tno.nl#ci.tno.nl/gitlab#'; }; f"
+        url = "!f() { git remote -v | grep 'push' | awk '{print $2}' |  sed -e 's#:#/#' -e 's#^git@#https://#' -e 's#.git$##' -e 's#ci.tno.nl#ci.tno.nl/gitlab#'; }; f | wl-copy; f"
 
 [credential]
 	helper = cache --timeout 1
 
+[push]
+        autoSetupRemote = true

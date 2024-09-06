@@ -8,7 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-feh --bg-fill /home/rcamarasa/documents/wallpapers/background.png
+# feh --bg-fill /home/rcamarasa/documents/wallpapers/background.png
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -28,3 +28,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+. "$HOME/.cargo/env"
+
+if [ -e /home/camarasaryr/.nix-profile/etc/profile.d/nix.sh ]; then . /home/camarasaryr/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+. "$HOME/.atuin/bin/env"
